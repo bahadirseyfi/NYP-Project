@@ -20,4 +20,8 @@ public class Personel {
     public String getSoyisim() {
         return soyisim;
     }
+
+    public Integer getSistem_id() {
+        return sistem_id;
+    }
 }

@@ -47,5 +47,11 @@ public class Dekanlik {
         }
     }
 
+    public static void personel_bilgileri_goruntule(Danisman danisman){
+            System.out.println("Dekanlık Tarafından Bilgiler Talep Edildi\n");
+            System.out.println("Danışmanın ismi: "+danisman.getIsim()+"\nSoyismi: "+
+                    danisman.getSoyisim()+"\nSistem_id: "+danisman.getSistem_id());
+    }
+
 
 }

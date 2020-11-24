@@ -16,5 +16,6 @@ public class Main {
         //ogrenci1.sinav_durumu();
 
         danisman.ogrencileri_yazdir();
+        Dekanlik.personel_bilgileri_goruntule(danisman);
     }
 }
