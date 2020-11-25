@@ -8,6 +8,7 @@ public class Ogrenci {
     static Integer ogrenci_onayi = 1;
     private boolean devamsizlik_durumu = false;
     private boolean sinav = false;
+    private String gelen_kutusu = "gelen kutusu boş";
 
     Ogrenci(String isim,Integer numara,String ulke,String fakulte,Integer sinif){
         System.out.println("Yeni Yabancı Öğrenci Kaydı Oluşturuluyor");
@@ -39,6 +40,11 @@ public class Ogrenci {
         else System.out.println(isim+" isimli öğrenciye sınav bulunmamaktadır.");
     }
 
+//DANIŞMAN TARAFINDAN GÜNCELLENEN GELEN KUTUSU DEĞİŞKENİNİN YAZILMASI İÇİN OLUŞTURULDU
+    public void mail_goster(){
+        System.out.println("Gelen kutusu: !\nMail:\n"+gelen_kutusu);
+    }
+
 
 
 
@@ -62,6 +68,10 @@ public class Ogrenci {
     public boolean setDevamsizlik_durumu(boolean devamsizlik_durumu) {
         this.devamsizlik_durumu = devamsizlik_durumu;
         return devamsizlik_durumu;
+    }
+
+    public void setGelen_kutusu(String gelen_kutusu) {
+        this.gelen_kutusu = gelen_kutusu;
     }
 
     //Bilgilerin okunması için Getter

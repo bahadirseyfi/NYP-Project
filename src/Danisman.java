@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Danisman extends Personel {
     private Integer ogrenci_sayisi;
@@ -15,21 +16,35 @@ public class Danisman extends Personel {
 
     //ÖĞRENCİLERİN DEVAMSIZLIK DURUMLARINI KOTNROL ETMEKTEDİR DANIŞMAN
     public void devamsizlik_guncelle(Ogrenci ogrenci){
+        if (ogrenci.ogrenci_onayi == 1)
         ogrenci.setDevamsizlik_durumu(true);
+        else System.out.println("Öğrenci kayıtlı değil, Devamsızlık durumu güncellenemedi");
     }
 
     //ERASMUS ÖĞRENCİLERİNE SINAV ATAMAKTADIR
     public void sinav_ata(Ogrenci ogrenci){
-        ogrenci.setSinav(true);
+        if(ogrenci.ogrenci_onayi == 1)
+          ogrenci.setSinav(true);
+        else System.out.println("Öğrenci kayıtlı değil, Sınav atanamadı");
     }
 
     //ÖĞRENCİ ARRAYLIST'İ OLUŞTURARAK OKULDAKİ KAYITLI YABANCI ÖĞRENCİLERİN TESPİTİ YAPILIYOR
     public void ogrencileri_yazdir(){
-        System.out.println(getIsim()+" "+getSoyisim()+" isimli danışmana Bağlı Kayıtlı Erasmus Öğrencileri:");
+        System.out.println("Kayıtlı Erasmus Öğrencileri:");
         for (String i : ogrenci_listesi){
             System.out.println(i);
         }
     }
 
+    //ÖĞRENCİLERE MAİL ATMAK İÇİN ÖĞRENCİ SINIFINDAKİ GELEN KUTUSU DEĞİŞKENİNİ GÜNCELLİYORUM
+    public void mail_gonder(Ogrenci ogrenci){
+        String mail;
+        System.out.println(ogrenci.getIsim()+" isimli Öğrenciye Mail yazınız: \n");
+        Scanner scanner = new Scanner(System.in);
+        mail = scanner.nextLine();
+
+        ogrenci.setGelen_kutusu(mail);
+
+    }
 
 }
