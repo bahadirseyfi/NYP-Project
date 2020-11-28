@@ -3,8 +3,8 @@ import java.util.Scanner;
 
 public class Dekanlik {
 
-    Dekanlik(Boolean ogrenci_kaydi_onayi){
-
+    Dekanlik(){
+            System.out.println("Dekanlık İşlem Başlatıyor");
     }
 
 
