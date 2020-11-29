@@ -9,6 +9,8 @@ public class Ogrenci {
     private boolean devamsizlik_durumu = false;
     private boolean sinav = false;
     private String gelen_kutusu = "gelen kutusu boş";
+    private Integer sayisal_not;
+    private String harf_not;
 
     Ogrenci(String isim,Integer numara,String ulke,String fakulte,Integer sinif){
         System.out.println("Yeni Yabancı Öğrenci Kaydı Oluşturuluyor");
@@ -45,7 +47,13 @@ public class Ogrenci {
         System.out.println("Gelen kutusu: !\nMail:\n"+gelen_kutusu);
     }
 
-
+public void not_goruntule(){
+        if (sayisal_not != null){
+        System.out.println("Not: "+ sayisal_not);
+    } else {
+            System.out.println("Not: " + harf_not);
+        }
+}
 
 
     // MARK: - ÖĞRENCİ BİLGİLERİNE ULAŞIM İÇİN GET/SET ENCAPSULATION İLKELERİ
@@ -68,6 +76,14 @@ public class Ogrenci {
     public boolean setDevamsizlik_durumu(boolean devamsizlik_durumu) {
         this.devamsizlik_durumu = devamsizlik_durumu;
         return devamsizlik_durumu;
+    }
+
+    public void setHarf_not(String harf_not) {
+        this.harf_not = harf_not;
+    }
+
+    public void setSayisal_not(Integer sayisal_not) {
+        this.sayisal_not = sayisal_not;
     }
 
     public void setGelen_kutusu(String gelen_kutusu) {
@@ -95,4 +111,10 @@ public class Ogrenci {
         return numara;
     }
 
+    public Integer getSayisal_not() {
+        return sayisal_not;
+    }
+    public String getHarf_not() {
+        return harf_not;
+    }
 }

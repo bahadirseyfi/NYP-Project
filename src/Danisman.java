@@ -14,7 +14,7 @@ public class Danisman extends Personel {
         System.out.println("Yabancı Öğrenciye Atanan Personelin Görevi: Danışman");
     }
 
-    //ÖĞRENCİLERİN DEVAMSIZLIK DURUMLARINI KOTNROL ETMEKTEDİR DANIŞMAN
+    //ÖĞRENCİLERİN DEVAMSIZLIK DURUMLARINI KONTROL ETMEKTEDİR DANIŞMAN
     public void devamsizlik_guncelle(Ogrenci ogrenci){
         if (ogrenci.ogrenci_onayi == 1)
         ogrenci.setDevamsizlik_durumu(true);
@@ -36,6 +36,7 @@ public class Danisman extends Personel {
         }
     }
 
+
     //ÖĞRENCİLERE MAİL ATMAK İÇİN ÖĞRENCİ SINIFINDAKİ GELEN KUTUSU DEĞİŞKENİNİ GÜNCELLİYORUM
     public void mail_gonder(Ogrenci ogrenci){
         String mail;
@@ -46,5 +47,16 @@ public class Danisman extends Personel {
         ogrenci.setGelen_kutusu(mail);
 
     }
+    //HER İKİ FONKSİYON DA ÖĞRENCİYE NOT VERMEK AMAÇLI ANCAK BİRİ HARF NOTU OLARAK DİĞER SAYISAL PUAN OLARAK YAZILMAKTA
+    //OVERLOADING YAPILMIŞTIR.
 
+    public void not_ver(Ogrenci ogrenci, Integer not){
+        ogrenci.setSayisal_not(not);
+       // System.out.println("Öğrencinin notu : "+ogrenci.getSayisal_not());
+    }
+
+    public void not_ver(Ogrenci ogrenci, String not){
+        ogrenci.setHarf_not(not);
+      //  System.out.println("Öğrencinin notu: "+ogrenci.getHarf_not());
+    }
 }

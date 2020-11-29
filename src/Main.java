@@ -16,6 +16,7 @@ public class Main {
         ogrenci1.devamsizlik_getir();
         ogrenci1.sinav_durumu();
 
+
         Ogrenci ogrenci2 = new Ogrenci("Mike Flair",513,"italy","işletme",2);
         Ogrenci_isleri ogrenci_isleri = new Ogrenci_isleri("Selami","Yılmaz",233);
         ogrenci_isleri.gorev_belirtme();
@@ -29,5 +30,11 @@ public class Main {
         
         danisman.mail_gonder(ogrenci1);
         ogrenci1.mail_goster();
+
+        danisman.not_ver(ogrenci1,"AA");
+        danisman.not_ver(ogrenci2, 95);
+        ogrenci1.not_goruntule();
+        ogrenci2.not_goruntule();
     }
+
 }
