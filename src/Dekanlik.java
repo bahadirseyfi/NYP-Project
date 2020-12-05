@@ -20,8 +20,10 @@ public class Dekanlik {
                 return 1;
             }
         } catch (InputMismatchException e) {
-                System.out.println("lütfen sayı giriniz Hata Mesajı: "+ e);
+                System.out.println("Hatalı Giriş Yapıldı: "+ e);
                 return 0;
+        }finally {
+            System.out.println("Sistem Onaylamadı");
         }
         System.out.println("Ogrenci kaydi dekanlık tarafından Onaylanmadı");
         return 2;
@@ -36,12 +38,12 @@ public class Dekanlik {
     }
 
     public static void ogrenci_bilgileri_duzenle(Ogrenci ogrenci) {
+        Scanner scanner = new Scanner(System.in);
         Boolean hatali_secim = false;
         int secim, numara; //Seçim: Dekanlığın hangi bilgiyi güncelleyeceğini, numara ise güncel numarayı temsil ediyor
         String isim; //: güncellenecek isim
         System.out.println("Öğrencinin Güncellemek İstediğiniz Bilgisi:\n1:İsim\n2:Numara");
         try {
-            Scanner scanner = new Scanner(System.in);
             secim = scanner.nextInt();
             if (secim == 1) {
                 isim = scanner.nextLine();
@@ -55,6 +57,8 @@ public class Dekanlik {
             }
         } catch (InputMismatchException e) {
             System.out.println("Hatalı giriş yapıldı :  " + e);
+        }finally {
+            System.out.println("Değişiklik Yapılamadı");
         }
     }
     public static void personel_bilgileri_goruntule(Danisman danisman){
